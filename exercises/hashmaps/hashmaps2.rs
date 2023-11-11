@@ -13,7 +13,6 @@
 //
 // Execute `rustlings hint hashmaps2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
@@ -39,6 +38,12 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Insert new fruits if they are not already present in the basket.
         // Note that you are not allowed to put any type of fruit that's already
         // present!
+        let value_opt = basket.get(&fruit);
+        
+        match value_opt {
+            None => basket.insert(fruit, 1),
+            Some(value) => {println!("Not modifying"); None }
+        };
     }
 }
 
